@@ -1,9 +1,20 @@
+- name: Add Docker GPG apt Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
 - name: Install Dependencies
   apt:
     name: [
     'jq',
     'git',
     're2c',
+    'docker-ce',
     'bison',
     'gettext',
     'pkg-config',

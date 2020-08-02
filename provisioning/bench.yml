@@ -5,7 +5,6 @@
     golang_version: 1.13
 
   roles:
-    - user.isucon
     - bootstrap
     - aliyun
     - external.deploy
